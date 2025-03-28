@@ -9,6 +9,11 @@ app.use(express.json()); // Parse JSON requests
 const PORT = process.env.PORT || 5000;
 
 // API Route for Business Growth Plan
+
+app.get("/", (req, res) => {
+  res.send("Welcome to the Business Growth Plan API!");
+});
+
 app.post("/generate-plan", async (req, res) => {
   try {
     const {
@@ -65,6 +70,8 @@ Ensure your response is in strict JSON format without any additional commentary.
         },
       ],
     };
+
+
 
     const response = await fetch(apiUrl, {
       method: "POST",
