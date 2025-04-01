@@ -157,7 +157,6 @@ app.post("/generate-plan", async (req, res) => {
       challenges,
       govtSchemeAvail,
       B_type,
-      marketUpdt,
     } = req.body;
 
     if (!process.env.OPENROUTER_API_KEY) {
