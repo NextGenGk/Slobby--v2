@@ -307,9 +307,9 @@ Use the following input details to craft the plan:
 
 Based on the above data, generate a strategic plan with clear, step-by-step guidance.
 
-1. *Monthly Tasks:* \n   1. Task 1 description \n   2. Task 2 description \n   3. Task 3 description \n
-2. *Weekly Tasks:* \n   1. Task 1 description \n   2. Task 2 description \n   3. Task 3 description \n
-3. *Supportive Hints:* \n   1. Hint 1 description \n   2. Hint 2 description \n   3. Hint 3 description \n
+1. *Monthly Tasks:* \n   1. Task 1 description \n   2. Task 2 description \n   3. Task 3 description \n   4. Task 4 description \n   5. Task 5 description \n
+2. *Weekly Tasks:* \n   1. Task 1 description \n   2. Task 2 description \n   3. Task 3 description \n   4. Task 4 description \n   5. Task 5 description \n
+3. *Supportive Hints:* \n   1. Hint 1 description \n   2. Hint 2 description \n   3. Hint 3 description \n   4. Hint 4 description \n   5. Hint 5 description \n
 Please output your response as a JSON object with exactly three keys: "monthly_task", "weekly_task", and "supportive_hints". Each key should map to a detailed text plan that is both actionable and easy to understand.
 
 Ensure your response is in strict JSON format without any additional commentary.`,
