@@ -228,9 +228,9 @@ Ensure your response is in strict JSON format without any additional commentary.
 
       // Format the response to include line breaks \n for better readability in tasks and hints
       const formattedResponse = {
-        monthly_task: parsedResponse.monthly_task.replace(/ /g, "\n"),
-        weekly_task: parsedResponse.weekly_task.replace(/ /g, "\n"),
-        supportive_hints: parsedResponse.supportive_hints.replace(/ /g, "\n")
+        monthly_task: parsedResponse.monthly_task.split('\n').join('\n'),
+        weekly_task: parsedResponse.weekly_task.split('\n').join('\n'),
+        supportive_hints: parsedResponse.supportive_hints.split('\n').join('\n')
       };
 
       res.json(formattedResponse); // Return the formatted response as JSON
@@ -254,6 +254,7 @@ Ensure your response is in strict JSON format without any additional commentary.
 app.listen(PORT, () => {
   console.log(`🚀 Server running on http://localhost:${PORT}`);
 });
+
 
 
 // Modified Code v2
