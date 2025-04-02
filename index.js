@@ -226,14 +226,22 @@ Ensure your response is in strict JSON format without any additional commentary.
     try {
       const parsedResponse = JSON.parse(cleanedContent);
 
-      // Format the response into a string with '\n' between points
+      // Formatting response
       const formatResponse = (response) => {
-        return Object.keys(response).map(key => {
-          return `${key}: ${response[key].split('. ').join('.\n')}`;
-        }).join('\n');
+        return response
+          .split("\n")
+          .map((line) => line.trim())
+          .filter((line) => line.length > 0)
+          .join("\n");
       };
 
-      res.json(formatResponse(parsedResponse)); // Return formatted response
+      const formattedResponse = {
+        monthly_task: formatResponse(parsedResponse.monthly_task),
+        weekly_task: formatResponse(parsedResponse.weekly_task),
+        supportive_hints: formatResponse(parsedResponse.supportive_hints),
+      };
+
+      res.json(formattedResponse); // Return only the formatted data object
     } catch (error) {
       console.error("Error parsing JSON:", error);
       res.status(500).json({
