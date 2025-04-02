@@ -185,7 +185,6 @@ Use the following input details to craft the plan:
 - *Challenges:* ${challenges}
 - *Government Scheme Availability:* ${govtSchemeAvail}
 - *Business Type (Detailed):* ${B_type}
-- *Market Updates/Trends:* ${marketUpdt}
 
 Based on the above data, generate a strategic plan with clear, step-by-step guidance.
 
