@@ -226,14 +226,14 @@ Ensure your response is in strict JSON format without any additional commentary.
     try {
       const parsedResponse = JSON.parse(cleanedContent);
 
-      // Format the response with line breaks after each task
-      const formattedResponse = {
-        monthly_task: parsedResponse.monthly_task.replace(/\n/g, '\n'),
-        weekly_task: parsedResponse.weekly_task.replace(/\n/g, '\n'),
-        supportive_hints: parsedResponse.supportive_hints.replace(/\n/g, '\n'),
+      // Format the response into a string with '\n' between points
+      const formatResponse = (response) => {
+        return Object.keys(response).map(key => {
+          return `${key}: ${response[key].split('. ').join('.\n')}`;
+        }).join('\n');
       };
 
-      res.json(formattedResponse); // Return only the data object
+      res.json(formatResponse(parsedResponse)); // Return formatted response
     } catch (error) {
       console.error("Error parsing JSON:", error);
       res.status(500).json({
@@ -254,6 +254,7 @@ Ensure your response is in strict JSON format without any additional commentary.
 app.listen(PORT, () => {
   console.log(`🚀 Server running on http://localhost:${PORT}`);
 });
+
 
 
 
