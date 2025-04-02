@@ -145,7 +145,7 @@ app.get("/", (req, res) => {
   res.send("Welcome to the Business Growth Plan API!");
 });
 
-app.post("/generate-plan", async (req, res) => {
+app.post("/", async (req, res) => {
   try {
     const {
       B_name,
