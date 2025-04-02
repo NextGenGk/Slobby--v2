@@ -224,11 +224,12 @@ Ensure your response is in strict JSON format without any additional commentary.
 
     try {
       const parsedResponse = JSON.parse(cleanedContent);
-      res.json({
-        monthly_task: parsedResponse.monthly_task.replace(/\n/g, " "),
-        weekly_task: parsedResponse.weekly_task.replace(/\n/g, " "),
-        supportive_hints: parsedResponse.supportive_hints.replace(/\n/g, " ")
-      });
+res.json({
+  monthly_task: parsedResponse.monthly_task.replace(/ /g, "\n"),
+  weekly_task: parsedResponse.weekly_task.replace(/ /g, "\n"),
+  supportive_hints: parsedResponse.supportive_hints.replace(/ /g, "\n")
+});
+
     } catch (error) {
       console.error("Error parsing JSON:", error);
       res.status(500).json({
